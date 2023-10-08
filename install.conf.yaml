@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.config/kitty/kitty.conf: kitty/kitty.conf
+    ~/.config/nvim: nvim/
+    ~/.zshrc: zsh/.zshrc
+
+- create:
+    - ~/.config/kitty
+    - ~/.config/nvim
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
