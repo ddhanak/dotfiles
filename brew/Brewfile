@@ -1,0 +1,52 @@
+# essentials
+brew "bash"
+brew "git"
+brew "tmux"
+brew "neovim"
+brew "htop"
+brew "coreutils"
+brew "bat"
+brew "gnupg" if OS.mac?
+
+# cli
+brew "fd"
+brew "ripgrep"
+brew "fzf"
+brew "gawk"
+brew "eza"
+brew "duf"
+brew "procs"
+brew "lazygit"
+brew "starship"
+brew "gnu-sed"
+brew "git-delta"
+
+# dev stuff
+brew "wget"
+brew "curl"
+brew "jq"
+brew "scc"
+brew "tldr"
+brew "hyperfine"
+brew "httpie"
+
+# work
+brew "awscli"
+brew "libpq"
+brew "pipenv"
+brew "pyenv"
+cask "zoom"
+cask "slack"
+cask "insomnia"
+
+# other
+brew "nvm"
+brew "dog" # better dig
+brew "asciinema" # record terminal
+
+# kubernetes & docker
+brew "kubernetes-cli"
+brew "helm"
+
+# fonts
+cask "font-jetbrains-mono-nerd-font"

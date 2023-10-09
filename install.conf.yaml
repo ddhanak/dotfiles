@@ -2,14 +2,32 @@
     link:
       relink: true
 
+- create:
+    - ~/.config/kitty
+    - ~/.config/nvim
+    - ~/.tmux/plugins
+
 - link:
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
     ~/.config/nvim: nvim/
     ~/.zshrc: zsh/.zshrc
-
-- create:
-    - ~/.config/kitty
-    - ~/.config/nvim
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.gitconfig: git/.gitconfig
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - description: Installing Homebrew
+      command: "[ -x \"$(which brew)\" ] || /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\""
+
+    - description: Updating Homebrew
+      command: "brew update"
+
+    - description: Installing brew bundler
+      command: "brew tap homebrew/bundle"
+
+    - description: Installing Brewfile bundle
+      command: "brew bundle --file=brew/Brewfile"
+      stdout: true
+      stderr: true
+
+    - description: Installing tmux plugins
+      command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || exit 0"

@@ -116,8 +116,8 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
-alias ls="exa --all --header"
-alias l="exa --all --long --header"
+alias ls="eza --all --header"
+alias l="eza --all --long --header"
 alias pn=pnpm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

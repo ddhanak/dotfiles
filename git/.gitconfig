@@ -1,0 +1,10 @@
+[init]
+  defaultBranch = main
+
+[core]
+  editor = vim
+  pager = delta
+  autocrlf = input
+
+[push]
+	autoSetupRemote = true
