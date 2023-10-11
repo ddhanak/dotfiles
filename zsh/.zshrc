@@ -78,6 +78,7 @@ ZSH_CUSTOM=$DOTFILES/zsh
 plugins=(
   aws
   git
+  gh
   colored-man-pages
   docker
   docker-compose

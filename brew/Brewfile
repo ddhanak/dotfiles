@@ -8,6 +8,7 @@ brew "neovim"
 brew "htop"
 brew "coreutils"
 brew "bat"
+brew "gh"
 brew "gnupg" if OS.mac?
 
 # cli
