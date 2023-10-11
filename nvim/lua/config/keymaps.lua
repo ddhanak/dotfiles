@@ -5,4 +5,4 @@
 --  vim fugitive
 vim.keymap.set("n", "<leader>gg", ":Git<cr>", { silent = true })
 vim.keymap.set("n", "<leader>gds", ":Gdiffsplit<cr>", { silent = true })
-vim.keymap.set("n", "<leader>gp", ":Git! push", { silent = true })
+vim.keymap.set("n", "<leader>gp", ":Git push<cr>", { silent = true })
