@@ -1,3 +1,5 @@
+tap "homebrew/cask-fonts"
+
 # essentials
 brew "bash"
 brew "git"
@@ -13,7 +15,7 @@ brew "fd"
 brew "ripgrep"
 brew "fzf"
 brew "gawk"
-brew "eza"
+brew "lsd"
 brew "duf"
 brew "procs"
 brew "lazygit"
@@ -29,6 +31,7 @@ brew "scc"
 brew "tldr"
 brew "hyperfine"
 brew "httpie"
+brew "sqlite"
 
 # work
 brew "awscli"
@@ -36,7 +39,6 @@ brew "libpq"
 brew "pipenv"
 brew "pyenv"
 cask "zoom"
-cask "slack"
 cask "insomnia"
 
 # other
@@ -47,6 +49,4 @@ brew "asciinema" # record terminal
 # kubernetes & docker
 brew "kubernetes-cli"
 brew "helm"
-
-# fonts
-cask "font-jetbrains-mono-nerd-font"
+brew "istioctl"

@@ -2,6 +2,9 @@ fpath=( /opt/homebrew/share/zsh/site-functions "${fpath[@]}" )
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Path to your dotfiles.
+export DOTFILES=$HOME/.dotfiles
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -9,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -65,6 +68,7 @@ ZSH_THEME="robbyrussell"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$DOTFILES/zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -76,12 +80,11 @@ plugins=(
   git
   colored-man-pages
   docker
-  httpie
-  yarn
-  npm
-  nvm
+  docker-compose
+  macos
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-completions
   fzf-tab
   fzf
 )
@@ -116,10 +119,12 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
-alias ls="eza --all --header"
-alias l="eza --all --long --header"
-alias pn=pnpm
+# For direnv to work properly it needs to be hooked into the shell.
+eval "$(direnv hook zsh)"
 
+export GPG_TTY=$(tty)
+
+# fzf extensions and completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # NVM
@@ -132,19 +137,20 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# pnpm
-export PNPM_HOME="/Users/deep/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+source ~/.zplug/init.zsh
 
-autoload -U compinit
-compinit -i
+zplug "plugins/kubectl", from:oh-my-zsh
+
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+export PATH="$HOME/.tgenv/bin:$PATH"
+export TGENV_AUTO_INSTALL=true
+export PATH="$HOME/.local/bin:$PATH"
+
 enable-fzf-tab
 
-eval "$(rbenv init - zsh)"
-
-# Created by `pipx` on 2023-04-19 00:26:37
-export PATH="$PATH:/Users/deep/.local/bin"
+autoload -U compinit && compinit

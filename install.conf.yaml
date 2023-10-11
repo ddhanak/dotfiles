@@ -2,21 +2,25 @@
     link:
       relink: true
 
+- shell:
+    - description: Installing XCode Command Line Tools
+      command: '[ -x "$(which xcodebuild)" ] || xcode-select --install'
+
 - create:
     - ~/.config/kitty
-    - ~/.config/nvim
     - ~/.tmux/plugins
 
 - link:
+    ~/.gitconfig: git/.gitconfig
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
+    ~/.config/kitty/current-theme.conf: kitty/current-theme.conf
     ~/.config/nvim: nvim/
     ~/.zshrc: zsh/.zshrc
     ~/.tmux.conf: tmux/.tmux.conf
-    ~/.gitconfig: git/.gitconfig
 
 - shell:
     - description: Installing Homebrew
-      command: "[ -x \"$(which brew)\" ] || /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\""
+      command: '[ -x "$(which brew)" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"'
 
     - description: Updating Homebrew
       command: "brew update"
@@ -31,3 +35,21 @@
 
     - description: Installing tmux plugins
       command: "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || exit 0"
+
+    - description: Installing ZSH autocompletions
+      command: "git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions 2> /dev/null || exit 0"
+
+    - description: Installing ZSH autosuggestions
+      command: "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 2> /dev/null || exit 0"
+
+    - description: Installing ZSH syntax highlighting
+      command: "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 2> /dev/null || exit 0"
+
+    - description: Installing git-trim
+      command: "git clone https://github.com/jasonmccreary/git-trim.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-trim 2> /dev/null || exit 0"
+
+    - description: Installing fzf-tab
+      command: "git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab 2> /dev/null || exit 0"
+
+    - description: Install Starship's "Pure" prompt preset
+      command: "starship preset nerd-font-symbols > ~/.config/starship.toml || exit 0"
