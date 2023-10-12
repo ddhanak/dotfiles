@@ -3,6 +3,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "bash-language-server",
         "stylua",
         "shellcheck",
         "shfmt",
@@ -16,6 +17,7 @@ return {
         "yaml-language-server",
         "prettierd",
         "mypy",
+        "debugpy",
       },
     },
   },
