@@ -49,6 +49,7 @@ cask "insomnia"
 brew "nvm"
 brew "dog" # better dig
 brew "asciinema" # record terminal
+brew "vale"
 
 # kubernetes & docker
 brew "kubernetes-cli"
