@@ -33,6 +33,7 @@ brew "scc"
 brew "tldr"
 brew "hyperfine"
 brew "httpie"
+brew "http-prompt"
 brew "sqlite"
 
 # work
