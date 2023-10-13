@@ -29,4 +29,9 @@ alias kge="kubectl get events --sort-by=.metadata.creationTimestamp"
 # date stuff
 alias week='date +%V'
 
+# other
 alias path='echo -e ${PATH//:/\\n}'
+
+# work
+alias tg="terragrunt"
+alias tgp="terragrunt plan"

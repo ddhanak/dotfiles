@@ -1,1 +1,12 @@
-{"news":{"NEWS.md":"2123"},"version":1,"hashes":{"\/Users\/deep\/.local\/share\/nvim\/lazy\/LazyVim\/NEWS.md":"2035"},"extras":[]}
+{
+  "extras": [
+    "lazyvim.plugins.extras.coding.yanky"
+  ],
+  "hashes": {
+    "/Users/deep/.local/share/nvim/lazy/LazyVim/NEWS.md": "2035"
+  },
+  "news": {
+    "NEWS.md": "2123"
+  },
+  "version": 2
+}
