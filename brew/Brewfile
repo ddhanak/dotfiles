@@ -35,6 +35,7 @@ brew "hyperfine"
 brew "httpie"
 brew "http-prompt"
 brew "sqlite"
+brew "direnv"
 
 # work
 brew "awscli"

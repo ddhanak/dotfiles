@@ -12,10 +12,9 @@
 [push]
 	autoSetupRemote = true
 
-[commit]
-	gpgsign = true
-
 [user]
-	signingkey = B0166E0DBDA5E60E
-	name = Deep Dhanak
-	email = 16140109+ddhanak@users.noreply.github.com
+  name = Deep Dhanak
+  email = 16140109+ddhanak@users.noreply.github.com
+
+[includeIf "gitdir:~/work/"]
+  path = ~/work/.gitconfig
