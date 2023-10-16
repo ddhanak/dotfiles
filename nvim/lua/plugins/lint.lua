@@ -6,7 +6,6 @@ return {
         python = { "mypy" },
         sh = { "shellcheck" },
         yaml = { "yamllint" },
-        markdown = { "vale" },
       }
 
       for ft, linters_ in pairs(linters_by_ft) do

@@ -43,6 +43,7 @@ brew "libpq"
 brew "pipenv"
 brew "pyenv"
 brew "aws-iam-authenticator"
+brew "circleci"
 cask "zoom"
 cask "insomnia"
 
