@@ -16,5 +16,5 @@
   name = Deep Dhanak
   email = 16140109+ddhanak@users.noreply.github.com
 
-[includeIf "gitdir:~/work/"]
+[includeIf "gitdir:~/dialogue/"]
   path = ~/work/.gitconfig
