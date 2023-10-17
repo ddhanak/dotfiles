@@ -36,6 +36,7 @@ brew "httpie"
 brew "http-prompt"
 brew "sqlite"
 brew "direnv"
+brew "tree"
 
 # work
 brew "awscli"
