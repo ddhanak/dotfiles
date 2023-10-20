@@ -9,6 +9,10 @@
   pager = delta
   autocrlf = input
 
+[delta]
+  side-by-side = true
+  line-numbers = true
+
 [push]
 	autoSetupRemote = true
 

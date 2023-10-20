@@ -79,6 +79,7 @@ ZSH_CUSTOM=$DOTFILES/zsh
 plugins=(
   aws
   git
+  git-trim
   gh
   colored-man-pages
   docker
@@ -151,6 +152,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 export PATH="$HOME/.tgenv/bin:$PATH"
 export TGENV_AUTO_INSTALL=true
+export TFENV_ARCH=amd64
 export PATH="$HOME/.local/bin:$PATH"
 
 enable-fzf-tab
