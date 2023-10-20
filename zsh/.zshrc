@@ -157,4 +157,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 enable-fzf-tab
 
+eval "$(navi widget zsh)"
+
 autoload -U compinit && compinit

@@ -24,6 +24,7 @@ brew "lazygit"
 brew "starship"
 brew "gnu-sed"
 brew "git-delta"
+brew "navi"
 
 # dev stuff
 brew "wget"
