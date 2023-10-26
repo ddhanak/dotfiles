@@ -46,6 +46,7 @@ brew "pipenv"
 brew "pyenv"
 brew "aws-iam-authenticator"
 brew "circleci"
+cask "1password-cli"
 cask "zoom"
 cask "insomnia"
 

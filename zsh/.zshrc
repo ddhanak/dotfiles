@@ -77,6 +77,7 @@ ZSH_CUSTOM=$DOTFILES/zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  1password
   aws
   git
   git-trim
