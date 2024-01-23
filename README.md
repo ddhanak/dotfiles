@@ -13,3 +13,14 @@ To install follow these steps:
    ```
 
 1. Run the `/.install` script.
+
+### Adding shell completion
+
+```bash
+[command] completion [shell] > "${fpath[1]}/_command"
+```
+
+Replace `[command]` and `[shell]` with actual values.
+
+`${fpath[1]}` refers to the second element of the Zsh function path (`fpath`).
+This path determines where the completion script `_command` will be stored.
